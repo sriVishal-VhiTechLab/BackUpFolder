@@ -1,0 +1,19 @@
+<!DOCTYPE HTML>
+<html>
+<body>
+<script type="text/javascript">
+var str = prompt("Enter the Input","");
+
+str = str.toUpperCase();
+for(var i = 0; i < str.length; i++) {
+var chr = str.charAt(i);
+if(chr == 'A' || chr == 'E' || chr == 'I' || chr == 'O' || chr == 'U')break;
+}
+if( i < str.length )
+alert("The position of the left most vowel in the given word "+ str + " is "+(i+1));
+else
+alert("No vowel found in the entered string "+str);
+
+</script>
+</body>
+</html>
