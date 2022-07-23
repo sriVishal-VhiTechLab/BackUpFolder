@@ -1,5 +1,4 @@
 let link= document.URL;
-console.log(document)
 document.getElementById("demo").innerHTML = link;
 
 // textcontent returns all text content contained in and its child Elements

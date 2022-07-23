@@ -3,9 +3,9 @@ mainFunction = () => {
       let arrOfNum = usrArr.split(" ").map(Number);
       let result = mergeSort(arrOfNum);
       console.log(result);
+      debugger;
 }
 mergeSort = (array) => {
-      debugger;
       if (array.length === 1) {
             return array;// Base Condition.
       }
@@ -15,7 +15,7 @@ mergeSort = (array) => {
       return mergeArray(mergeSort(leftPart), mergeSort(rightPart));
 }
 mergeArray = (left, right) => {
-
+      debugger;
       let outArray = [];// Final Output Array.
       let leftArrayIndex = 0, rightArrayIndex = 0;
       while (leftArrayIndex < left.length && rightArrayIndex < right.length) {

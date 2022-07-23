@@ -6,15 +6,10 @@ function mainFunction() {
             str += "&nbsp&nbsp";
         }
         for (let k = 1; k <= i; k++)/*NUMBERS*/ {
-            if (i > 9) {
-                k = k - 10
-                str += k;
-
-            }
-
+            str += (k > 9) ? k % 10 : k;
         }
         for (let l = i - 1; l > 0; l--) {
-            str += l;
+            str += (l > 9) ? l % 10 : l;
         }
         str += "<br/>";
     }
@@ -23,10 +18,10 @@ function mainFunction() {
             str += "&nbsp&nbsp";
         }
         for (k = 1; k <= i; k++) {
-            str += k;
+            str += (k > 9) ? k % 10 : k;
         }
         for (l = i - 1; l > 0; l--) {
-            str += l;
+            str += (l > 9) ? l % 10 : l;
         }
         str += "<br/>"
     }
