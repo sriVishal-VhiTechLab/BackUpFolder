@@ -12,6 +12,7 @@
       <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
             integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
             crossorigin="anonymous"></script>
+      <script src="https://kit.fontawesome.com/a6daf494b5.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -20,6 +21,12 @@
             <!-- -------------WEB HEADER------------------- -->
             <div class="webPageHeader flex">
                   <h1 style="padding: 10px;">JAVASCRIPT CRUD</h1>
+                  <div>
+                        <a onclick="switchTheme()">
+                              <i class="fa-solid fa-moon" id="themeIcon"></i>
+                        </a>
+                        <a href="">View Table</a>
+                  </div>
             </div>
             <!-- ----------------------HEADER UNDERLINE TAG---------------- -->
             <hr style="width: 100%; color:#333;">
@@ -68,12 +75,12 @@
 
             </div>
             <!-- -----------------TABLE CONTAINER------------------------- -->
-            <table class="crudTableContainer table table-hover" style="height: 200px; width:95%;" id="crudTable">
-                  <thead style="border-bottom: 3px solid black;">
+            <table class="crudTableContainer table table-hover" style="height : 100px; width: 95%;" id="crudTable">
+                  <thead style="border-bottom: 3px solid black; color: cornflowerblue;">
                         <th>NAME</th>
                         <th>OCCUPATION</th>
-                        <th>SALARY</th>
                         <th>EMAIL-ID</th>
+                        <th>SALARY</th>
                         <th>Operations</th>
                   </thead>
                   <tbody style="height: 30px;" id="crudBody"></tbody>

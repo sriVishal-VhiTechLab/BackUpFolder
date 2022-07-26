@@ -1,13 +1,29 @@
 * {
   margin: 0;
   padding: 0;
+  cursor: pointer;
+}
+.themeIcon{
+  background-color: black;
+  color: white;
 }
 input {
   font-size: 20px;
 }
-
+hr{
+  margin: 0 !important;
+}
+.edit,.del {
+  margin: 10px;
+  background-color: grey;
+  cursor: pointer;
+}
 ::-webkit-scrollbar {
   display: none;
+}
+.webPageHeader{
+  width:  95%;
+  justify-content: space-between !important;
 }
 .webPageContainer {
   height: 100vh;
@@ -39,6 +55,7 @@ th {
 }
 td {
   height: 20px;
+  vertical-align: middle;
 }
 tr {
   border-bottom: 2px solid #333;
