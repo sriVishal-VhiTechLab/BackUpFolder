@@ -47,6 +47,5 @@ editData = (td) => {
             document.getElementById("salInp").value = currentRow.cells[3].innerHTML;
             alert("Now You Can Edit Your Data In Specific Fields");
             let deleteAndEdit = document.getElementById("crudBody");
-            deleteAndEdit.deleteRow(0);
       }
 }
