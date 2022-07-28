@@ -22,10 +22,7 @@
             <div class="webPageHeader flex">
                   <h1 style="padding: 10px;">JAVASCRIPT CRUD</h1>
                   <div>
-                        <a onclick="switchTheme()">
-                              <i class="fa-solid fa-moon" id="themeIcon"></i>
-                        </a>
-                        <a href="">View Table</a>
+                        <button class="btn btn-primary" onclick="resetBtn()" id="resetBtn">Reset Table</button>
                   </div>
             </div>
             <!-- ----------------------HEADER UNDERLINE TAG---------------- -->
@@ -85,6 +82,7 @@
                   </thead>
                   <tbody style="height: 30px;" id="crudBody"></tbody>
             </table>
+            <!-- --------------MODALS--------------------------------- -->
             <dialog id="updateModal" class="updateModal position-absolute" style="height: 200px; width: 450px;">
                   <center class="position-relative" style="top: 30%;">
                         <h2 style="font-size: 18px !important; letter-spacing: 1px;">Data Has Been Updated SucessFully!
@@ -103,6 +101,25 @@
                   <center class="position-relative" style="top: 30%;">
                         <button class="btn btn-warning" style="border-radius: 50px;" id="closeBtn1">Okay!</button>
 
+                  </center>
+            </dialog>
+            <dialog id="resetModal" class="resetModal position-absolute" style="height: 200px; width: 450px;">
+                  <center class="position-relative" style="top: 30%;">
+                        <h2 style="font-size: 18px !important; letter-spacing: 1px;">Form Has Been Refreshed!
+                        </h2>
+                  </center>
+                  <center class="position-relative" style="top: 30%;">
+                        <button class="btn btn-warning" style="border-radius: 50px;" id="closeBtn2">Okay!</button>
+
+                  </center>
+            </dialog>
+            <dialog id="delModal" class="delModal position-absolute" style="height: 200px; width: 450px;">
+                  <center class="position-relative" style="top: 30%;">
+                        <h2 style="font-size: 18px !important; letter-spacing: 1px;">Current Data Has Been Deleted!
+                        </h2>
+                  </center>
+                  <center class="position-relative" style="top: 30%;">
+                        <button class="btn btn-warning" style="border-radius: 50px;" id="closeBtn3">Okay!</button>
                   </center>
             </dialog>
       </div>

@@ -62,8 +62,17 @@ deleteData = (td) => {//This Function is Called by Delete Button.
       if (confirm("Are You Sure To Delete The Existing Record")) {
             debugger;
             let row = td.parentElement.parentElement;
-            document.getElementById("crudBody").deleteRow(row.rowIndex);
+            console.log(row);
+            let rIndex = document.getElementById("crudTable");
+            rIndex.deleteRow(row.rowIndex);
             resetForm();
+            let dispDelModal = document.querySelector('#delModal');
+            dispDelModal.showModal();
+            let closeBtn = document.querySelector('#closeBtn3');
+            closeBtn.addEventListener('click', () => {
+                  dispDelModal.close();
+            })
+
       }
 }
 resetForm = () => {
@@ -72,6 +81,20 @@ resetForm = () => {
       document.getElementById("occupInp").value = "";
       document.getElementById("salInp").value = "";
       selectedRow = null;
+}
+resetBtn = () => {
+      document.getElementById("nameInp").value = "";
+      document.getElementById("mailInp").value = "";
+      document.getElementById("occupInp").value = "";
+      document.getElementById("salInp").value = "";
+      selectedRow = null;
+      let dispResetModal = document.querySelector('#resetModal');
+      dispResetModal.showModal();
+      let closeBtn = document.querySelector('#closeBtn2');
+      closeBtn.addEventListener('click', () => {
+            dispResetModal.close();
+      })
+
 }
 
 
