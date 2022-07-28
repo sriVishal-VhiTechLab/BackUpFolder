@@ -68,8 +68,6 @@
                   <!-- ---------------Submit Button----------------- -->
 
                   <div class="submitButton" style="width: 97%;">
-                        <button class="btn btn-primary color-light" style="height: 50px; margin-right:5px;"
-                              id="saveBtn">Save Changes!</button>
                         <button style="width: 150px; height:50px; padding: 10px; font-size: 13px; color: white;"
                               class="btn btn-success" onclick="mainFunction()">Submit
                         </button>
@@ -81,19 +79,31 @@
                   <thead style="border-bottom: 3px solid black; color: cornflowerblue;">
                         <th>NAME</th>
                         <th>OCCUPATION</th>
+                        <th>EMAIL-ID</th>
                         <th>SALARY</th>
-                        <th>EMAIL ID</th>
                         <th>Operations</th>
                   </thead>
                   <tbody style="height: 30px;" id="crudBody"></tbody>
             </table>
-            <dialog id="editModal">
-                  <center>
-                        <h2>Hi</h2>
+            <dialog id="updateModal" class="updateModal position-absolute" style="height: 200px; width: 450px;">
+                  <center class="position-relative" style="top: 30%;">
+                        <h2 style="font-size: 18px !important; letter-spacing: 1px;">Data Has Been Updated SucessFully!
+                        </h2>
                   </center>
-                  <p>Edited Data Has Been Updated SucessFully!</p>
-                  <button class="btn btn-danger closeModalBtn" id="closeModalBtn">Close!</button>
+                  <center class="position-relative" style="top: 30%;">
+                        <button class="btn btn-warning" style="border-radius: 50px;" id="closeBtn">Okay!</button>
 
+                  </center>
+            </dialog>
+            <dialog id="insertModal" class="insertModal position-absolute" style="height: 200px; width: 450px;">
+                  <center class="position-relative" style="top: 30%;">
+                        <h2 style="font-size: 18px !important; letter-spacing: 1px;">Data Has Been Inserted SucessFully!
+                        </h2>
+                  </center>
+                  <center class="position-relative" style="top: 30%;">
+                        <button class="btn btn-warning" style="border-radius: 50px;" id="closeBtn1">Okay!</button>
+
+                  </center>
             </dialog>
       </div>
       <script src="design.js"></script>

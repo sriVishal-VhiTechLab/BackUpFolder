@@ -3,29 +3,26 @@
   padding: 0;
   cursor: pointer;
 }
-#saveBtn{
-  display: none;
-}
-#editModal{
+
+#updateModal,#insertModal {
   top: 50%;
   left: 50%;
-  transform: translate(-50%,-50%);
+  transform: translate(-50%, -50%);
 }
-#editModal::backdrop{
-  background: linear-gradient(45deg,red,blue);
-  opacity: .2;
+.updateModal::backdrop,#insertModal::backdrop {
+  background-color: #b3cdd1;
+  background-image: linear-gradient(315deg, #b3cdd1 0%, #9fa4c4 74%);
+  opacity: 0.4;
 }
-.themeIcon{
-  background-color: black;
-  color: white;
-}
+
 input {
   font-size: 20px;
 }
-hr{
+hr {
   margin: 0 !important;
 }
-.edit,.del {
+.edit,
+.del {
   margin: 10px;
   background-color: grey;
   cursor: pointer;
@@ -33,8 +30,8 @@ hr{
 ::-webkit-scrollbar {
   display: none;
 }
-.webPageHeader{
-  width:  95%;
+.webPageHeader {
+  width: 95%;
   justify-content: space-between !important;
 }
 .webPageContainer {

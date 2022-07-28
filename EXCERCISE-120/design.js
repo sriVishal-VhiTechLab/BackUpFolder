@@ -1,6 +1,26 @@
+let selectedRow = null;
 mainFunction = () => {
       let usrData = readFormData();
-      renderTable(usrData);
+      if (selectedRow == null) {
+            renderTable(usrData);
+      }
+      else {
+            updateData(usrData);
+            let dispDelModal = document.querySelector('#updateModal');
+            dispDelModal.showModal();
+            let closeBtn = document.querySelector('#closeBtn');
+            closeBtn.addEventListener('click', () => {
+                  dispDelModal.close();
+            })
+      }
+      resetForm();
+      let dispInsModal = document.querySelector('#insertModal');
+      dispInsModal.showModal();
+      let closeBtn = document.querySelector('#closeBtn1');
+      closeBtn.addEventListener('click', () => {
+            dispInsModal.close();
+      })
+
 }
 readFormData = () => {
       let FormData = {};
@@ -19,33 +39,39 @@ renderTable = (obj) => {
       let mailCell = crudRow.insertCell(3);
       nameCell.innerHTML = obj.fullName;
       occupCell.innerHTML = obj.Occupation;
-      salCell.innerHTML = obj.salary;
-      mailCell.innerHTML = obj.mailId;
+      salCell.innerHTML = obj.mailId;
+      mailCell.innerHTML = obj.salary;
       let editCell = crudRow.insertCell(4);
-      editCell.innerHTML = '<button class="btn btn-success edit" onclick="editData(this)">EDIT</button><button onclick="deleteData()" class="btn btn-danger del">DELETE</a>';
+      editCell.innerHTML = '<button class="btn btn-success edit" onclick="editInpData(this)">EDIT</button><button onclick="deleteData(this)" class="btn btn-danger del">DELETE</button>';
 }
-deleteData = () => {
-      let confirm = window.confirm("Are You You Want Delete The Data In The Current Row?");
-      if (confirm === true) {
-            let deleteOperation = document.getElementById("crudBody");
-            let deleteCurrent = deleteOperation.deleteRow(0);
-            alert("Deleted SuccessFully.");
+editInpData = (td) => {//This Function is Called by EDIT Button.
+      selectedRow = td.parentElement.parentElement;
+      console.log(selectedRow);
+      document.getElementById("nameInp").value = selectedRow.cells[0].innerHTML;
+      document.getElementById("occupInp").value = selectedRow.cells[1].innerHTML;
+      document.getElementById("mailInp").value = selectedRow.cells[2].innerHTML;
+      document.getElementById("salInp").value = selectedRow.cells[3].innerHTML;
+}
+updateData = (newData) => {
+      selectedRow.cells[0].innerHTML = newData.fullName;
+      selectedRow.cells[1].innerHTML = newData.Occupation;
+      selectedRow.cells[2].innerHTML = newData.salary;
+      selectedRow.cells[3].innerHTML = newData.mailId;
+}
+deleteData = (td) => {//This Function is Called by Delete Button.
+      if (confirm("Are You Sure To Delete The Existing Record")) {
+            debugger;
+            let row = td.parentElement.parentElement;
+            document.getElementById("crudBody").deleteRow(row.rowIndex);
+            resetForm();
       }
 }
-switchTheme = () => {
-      let dTheme = document.body;
-      dTheme.classList.toggle("themeIcon");
+resetForm = () => {
+      document.getElementById("nameInp").value = "";
+      document.getElementById("mailInp").value = "";
+      document.getElementById("occupInp").value = "";
+      document.getElementById("salInp").value = "";
+      selectedRow = null;
 }
-editData = (td) => {
-      let confirmEdit = window.confirm("Do You Want To make Changes In your Data!");
-      if (confirmEdit === true) {
-            let currentRow = td.parentElement.parentElement;
-            console.log(currentRow);
-            document.getElementById("nameInp").value = currentRow.cells[0].innerHTML;
-            document.getElementById("occupInp").value = currentRow.cells[1].innerHTML;
-            document.getElementById("mailInp").value = currentRow.cells[2].innerHTML;
-            document.getElementById("salInp").value = currentRow.cells[3].innerHTML;
-            alert("Now You Can Edit Your Data In Specific Fields");
-            let deleteAndEdit = document.getElementById("crudBody");
-      }
-}
+
+
