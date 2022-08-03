@@ -1,6 +1,7 @@
 let selectedRow = null;
 mainFunction = () => {
       let usrData = readFormData();
+      let createLocalStorage = createLocalObject(usrData);
       if (selectedRow == null) {
             renderTable(usrData);
       }
@@ -20,7 +21,6 @@ mainFunction = () => {
       closeBtn.addEventListener('click', () => {
             dispInsModal.close();
       })
-
 }
 readFormData = () => {
       let FormData = {};
@@ -29,6 +29,11 @@ readFormData = () => {
       FormData["mailId"] = document.getElementById("mailInp").value;
       FormData["salary"] = document.getElementById("salInp").value;
       return FormData;
+}
+createLocalObject = (usrObj) => {
+      localStorage.setItem('USRDATA', JSON.stringify(usrObj));
+      let savedObj = localStorage.getItem('usrObj');
+      console.log(JSON.parse(savedObj));
 }
 renderTable = (obj) => {
       let crudTable = document.getElementById("crudBody");
@@ -55,8 +60,8 @@ editInpData = (td) => {//This Function is Called by EDIT Button.
 updateData = (newData) => {
       selectedRow.cells[0].innerHTML = newData.fullName;
       selectedRow.cells[1].innerHTML = newData.Occupation;
-      selectedRow.cells[2].innerHTML = newData.salary;
-      selectedRow.cells[3].innerHTML = newData.mailId;
+      selectedRow.cells[2].innerHTML = newData.mailId;
+      selectedRow.cells[3].innerHTML = newData.salary;
 }
 deleteData = (td) => {//This Function is Called by Delete Button.
       if (confirm("Are You Sure To Delete The Existing Record")) {
@@ -72,7 +77,6 @@ deleteData = (td) => {//This Function is Called by Delete Button.
             closeBtn.addEventListener('click', () => {
                   dispDelModal.close();
             })
-
       }
 }
 resetForm = () => {
@@ -94,7 +98,6 @@ resetBtn = () => {
       closeBtn.addEventListener('click', () => {
             dispResetModal.close();
       })
-
 }
 
 

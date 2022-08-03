@@ -20,9 +20,9 @@
       <div class="webPageContainer">
             <!-- -------------WEB HEADER------------------- -->
             <div class="webPageHeader flex">
-                  <h1 style="padding: 10px;">JAVASCRIPT CRUD</h1>
+                  <h1 style="padding: 10px;"><a href="">JavaScript Crud</a></h1>
                   <div>
-                        <button class="btn btn-primary" onclick="resetBtn()" id="resetBtn">Reset Table</button>
+                        <button class="btn btn-primary" onclick="resetBtn()" id="resetBtn">Reset Form</button>
                   </div>
             </div>
             <!-- ----------------------HEADER UNDERLINE TAG---------------- -->
@@ -72,7 +72,7 @@
 
             </div>
             <!-- -----------------TABLE CONTAINER------------------------- -->
-            <table class="crudTableContainer table table-hover" style="height : 100px; width: 95%;" id="crudTable">
+            <table class="crudTableContainer table table-hover" style="height : 100px; width: 95%; " id="crudTable">
                   <thead style="border-bottom: 3px solid black; color: cornflowerblue;">
                         <th>NAME</th>
                         <th>OCCUPATION</th>
@@ -80,7 +80,7 @@
                         <th>SALARY</th>
                         <th>Operations</th>
                   </thead>
-                  <tbody style="height: 30px;" id="crudBody"></tbody>
+                  <tbody style="height: 30px; overflow: scroll;" id="crudBody"></tbody>
             </table>
             <!-- --------------MODALS--------------------------------- -->
             <dialog id="updateModal" class="updateModal position-absolute" style="height: 200px; width: 450px;">

@@ -3,7 +3,10 @@
   padding: 0;
   cursor: pointer;
 }
-
+a{
+  text-decoration: none !important;
+  cursor: pointer !important;
+}
 #updateModal,
 #insertModal,
 #resetModal,
