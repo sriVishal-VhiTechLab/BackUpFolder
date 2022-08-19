@@ -6,6 +6,6 @@ mainFunction = () => {
 }
 sumOfArray = (Array) => {
       let temp = 0;
-      Array.map(ele => { temp += Number(ele); });
+      Array.map(x => { temp += Number(x); });
       return temp;
 }

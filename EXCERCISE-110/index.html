@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Document</title>
+</head>
+<style>
+      * {
+            margin: 5px;
+      }
+
+      #nameList {
+            display: none;
+      }
+      /* #dispList{
+            display: none;
+      } */
+</style>
+
+<body>
+      <h2>Click to Create DropDown Based On Given Data.</h2>
+      <button onclick="mainFunction()">Click To Generate DropDown.</button><br>
+      <div style="display: flex;">
+            <label for="nameList"></label>
+            <select name="names" id="nameList" style="width: 160px;" onchange="getUsrName()">
+                  <option value="">---Select A Option------</option>
+                  <option value="Sindhu">Sindhu</option>
+                  <option value="Vishwa">Vishwa</option>
+                  <option value="Vinoth">Vinoth</option>
+                  <option value="Vineeth">Vineeth</option>
+                  <option value="Sathish">Sathish</option>
+            </select>
+            <label for="dispList"></label>
+            <select name="disp" id="dispList" style="width: 160px;">
+                  <option value="">---SELECT----</option>
+            </select>
+      </div>
+      <script src="script.js"></script>
+</body>
+
+</html>
