@@ -2,15 +2,20 @@ mainFunction = () => {
   let usrText = document.getElementById("usrSentence").value;
   let splitText = usrText.split(" ");
   let suffix = document.getElementById("findWord").value;
-  let result = checkForSuffix(splitText, suffix);
+  let filteredSuffix = suffix.replace(/\s/g, '');
+  filteredSuffix = filteredSuffix.toLowerCase();
+  let result = checkForSuffix(splitText, filteredSuffix);
 }
 checkForSuffix = (arr, suffText) => {
-  let lastElement = arr.splice(-1);
-  if (suffText == lastElement) {
-    document.getElementById("myPara").innerHTML = `${suffText} is Proper Suffix! and Present In Given Sentence`;
+  let filteredArray = arr.filter(e => e);
+  let lastElement = filteredArray.splice(-1).toString();
+  lastElement = lastElement.toLowerCase();
+  if (lastElement === suffText) {
+    document.getElementById("dispOutput").innerHTML = `The Suffix Exists In The String`;
   }
   else {
-    document.getElementById("myPara").innerHTML = `${suffText} is Not Proper Suffix! and Absent Given In Sentence`
-
+    document.getElementById("dispOutput").innerHTML = `The Suffix Isnt Found In the String`;
   }
 }
+//changes DONE !
+

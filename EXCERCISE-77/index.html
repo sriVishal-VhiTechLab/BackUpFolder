@@ -1,20 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-  </head>
-  <body>
-    <h2>Printing The TSA,LSA,Volume Of a Cycliner of Specific height And Radius.</h2>
-    ENTER THE RADIUS: <input type="text" id="radius" /> 
-    ENTER THE HEIGHT: <input type="text" id="height" />
-    <button onclick="mainFunction()">Calculate!</button>
-    <p id="myPara1"></p>
-    <p id="myPara2"></p>
-    <p id="myPara3"></p>
 
-    <script src="script.js"></script>
-  </body>
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+</head>
+
+<body>
+  <h2>Printing The TSA,LSA,Volume Of a Cycliner of Specific height And Radius.</h2>
+  ENTER THE RADIUS: <input type="number" id="radius" min="0" oninput="validity.valid||(value='')" />
+  ENTER THE HEIGHT: <input type="number" id="height" min="0" oninput="validity.valid||(value='')" />
+  <button onclick="mainFunction()">Calculate!</button>
+  <p id="myPara4"></p>
+  <p id="myPara1"></p>
+  <p id="myPara2"></p>
+  <p id="myPara3"></p>
+
+  <script src="script.js"></script>
+</body>
+
 </html>

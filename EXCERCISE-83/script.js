@@ -16,5 +16,4 @@ arrOperation = (arr, addNum) => {
         }
     }
     return arr;
-
 }

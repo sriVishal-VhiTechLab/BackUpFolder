@@ -20,8 +20,9 @@ function check(str) {
     if (firstLetter == firstLetter.toUpperCase()) {
       return true;
     }
-    if (firstLetter == firstLetter.toLowerCase()) {
+    else {
       return false;
     }
   }
 }
+// If else changes

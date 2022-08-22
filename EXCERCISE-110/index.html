@@ -11,31 +11,26 @@
       * {
             margin: 5px;
       }
-
-      #nameList {
+      #dropLists{
             display: none;
       }
-      /* #dispList{
-            display: none;
-      } */
 </style>
 
 <body>
-      <h2>Click to Create DropDown Based On Given Data.</h2>
-      <button onclick="mainFunction()">Click To Generate DropDown.</button><br>
-      <div style="display: flex;">
-            <label for="nameList"></label>
-            <select name="names" id="nameList" style="width: 160px;" onchange="getUsrName()">
-                  <option value="">---Select A Option------</option>
+      <h2>Click The Button To generate DropDown.</h2>
+      <button id="openBtn">Click To Display.</button><br>
+      <div id="dropLists">
+            <select id="namesList" style="width: 150px">
+                  <option value="">Select</option>
                   <option value="Sindhu">Sindhu</option>
-                  <option value="Vishwa">Vishwa</option>
                   <option value="Vinoth">Vinoth</option>
                   <option value="Vineeth">Vineeth</option>
+                  <option value="Vishwa">Viswa</option>
                   <option value="Sathish">Sathish</option>
+
             </select>
-            <label for="dispList"></label>
-            <select name="disp" id="dispList" style="width: 160px;">
-                  <option value="">---SELECT----</option>
+            <select id="dispList" style="width:150px">
+                  <option value=""></option>
             </select>
       </div>
       <script src="script.js"></script>
