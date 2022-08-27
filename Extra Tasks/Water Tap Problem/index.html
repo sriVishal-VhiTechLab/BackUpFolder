@@ -1,0 +1,99 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Document</title>
+</head>
+<style>
+      * {
+            margin: 10px;
+            padding: 0;
+      }
+</style>
+
+<body>
+      <h2>Water Tank Problem.</h2>
+      <div class="tank" id="tank">
+            <div id="tankCapacity" style="height:20px;width: 100px;  color: black; text-align: center;"></div>
+            <button onclick="startWaterFlow()">Open!</button>
+            <button onclick="stopWaterFlow()">Close!</button>
+      </div>
+      <script>
+            let capacity = 100;
+            let reduceCount = 10;
+            let openTank = null;
+            waterTankFunction = () => {
+                  capacity -= reduceCount;
+                  if (capacity <= 0) {
+                        document.getElementById("tankCapacity").innerHTML = `Tank Empty`;
+                        clearInterval(openTank);
+                  } else if (capacity >= 0) {
+                        document.getElementById("tankCapacity").innerHTML = `The Water capacity is ${capacity}`;
+                  }
+            };
+            startWaterFlow = () => {
+                  openTank = setInterval(() => {
+                        waterTankFunction();
+                  }, 1000);
+            };
+            stopWaterFlow = () => {
+                  clearInterval(openTank);
+                  waterTankFunction();// This is To Resume 
+            }
+      </script>
+</body>
+
+</html> -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Document</title>
+</head>
+
+<body>
+      <button onclick="openTap()">pause</button>
+      <button onclick="interval2()">interval</button>
+      <script>
+            let height = 0;
+            //let timer = document.getElementById('h1');
+            // const element = document.getElementById("myBar");
+            class waterTapFlow {
+                  constructor() {
+                        this.TapSwitch;
+                        this.interval;
+                  }
+                  openTap = () => {
+                        this.TapSwitch = true;
+                        this.openTap(this.TapSwitch);
+                  };
+                  openTap(TapSwitch) {
+                        if (TapSwitch === true && capacity > 0) {
+                              this.interval = setInterval(this.flow, 100);
+                        }
+                  }
+                  tapControl = () => {
+                        if (capacity === 0) {
+                              clearInterval(this.interval);
+                              this.tapFlow(false);
+                        }
+
+                        document.write(`capacity $(capacity--)`);
+                  };
+                  closeTap = () => {
+                        clearInterval(this.interval);
+                        this.isPaused = false;
+                        this.tapFlow(this.isPaused);
+                  };
+            }
+    //let flow = new waterFlow();
+      </script>
+</body>
+
+</html>

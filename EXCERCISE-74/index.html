@@ -17,11 +17,10 @@
     <h2>Inserting User Data At Specified Index.</h2>
     ENTER YOUR TEXT:<input type="text" id="defaultText"><br>
     ENTER THE WORD TO BE INSERTED: <input type="text" id="insertText"><br>
-    SPECIFY THE POSITION: <input type="number" min="0" id="position"><button onclick="mainFunction()">OutPut!</button><br>
+    SPECIFY THE POSITION: <input type="number" oninput="validity.value||(value='')" id="position"><button
+        onclick="mainFunction()">OutPut!</button><br>
     NOTE: DEFAULT POSITION IS 0 HERE!
     <p id="outPara"></p>
-    <p id="myPara2"></p>
-
     <script src="script.js"></script>
 </body>
 

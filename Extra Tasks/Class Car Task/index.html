@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Document</title>
+</head>
+
+<body>
+      <h2>Car Garage Problem!</h2>
+      <script>
+            class Car {
+                  constructor(brand, name, year, topSpeed) {
+                        this.brand = brand;
+                        this.name = name;
+                        this.year = year;
+                        this.topSpeed = topSpeed;
+                  }
+                  start() {
+                        document.write(`Brand,Model Year, TopSpeed : ${this.brand}, ${this.name}, ${this.year}, ${this.topSpeed}</br></br>`);
+                  }
+            }
+            let car1 = new Car("Ford", "Figo", "2013", "150Kmph");
+            let car2 = new Car("Fiat", "Polo", "2015", "190Kmph");
+            let car3 = new Car("Lamborghini", "X1", "2016", "250Kmph");
+            car1.start();
+            car2.start();
+            car3.start();
+      </script>
+</body>
+
+</html>

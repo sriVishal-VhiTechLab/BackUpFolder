@@ -14,12 +14,13 @@
             margin: 15px;
         }
     </style>
-    <script src="script.js"></script>
     <h2>Priting The Multiples Of the Specifies Number to A particular Limit.</h2>
-    ENTER THE NUMBER: <input type="text" name="" id="usrInp1">MENTION THE MULTIPLE: <input type="text" name=""
-        id="usrInp2">
+    ENTER THE NUMBER: <input type="number" id="usrInp1" min="0" oninput="validity.value||(value='')">
+    MENTION THE MULTIPLE LIMIT: <input type="number" id="usrInp2" min="0">
     <button onclick="mainFunction()">Print!</button>
-    <p id="myPara"></p>
+    <p id="dispMultiples"></p>
+    <script src="script.js"></script>
+
 </body>
 
 </html>
