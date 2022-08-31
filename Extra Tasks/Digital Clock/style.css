@@ -1,0 +1,35 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.container {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.dispClock {
+  height: 300px;
+  width: 300px;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  border-radius: 50%;
+  background-color: black;
+  color: cornflowerblue;
+}
+.timeDisp{
+      width: 100%;
+      height: 50px;
+      color: rgb(18, 197, 188);
+      text-align: center;
+      font-size: 40px;
+}
+.dateDisp{
+      padding: 5px;
+      font-size: 15px;
+      color: white;
+}

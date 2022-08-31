@@ -1,3 +1,4 @@
+// ---USER PIC UPLOAD-------
 let getUserImg = document.getElementById("usrImgUpload");
 uploadUserImage = () => {
       getUserImg.click();
@@ -10,3 +11,6 @@ getUserImg.addEventListener("change", function () {
       });
       reader.readAsDataURL(this.files[0]);
 });
+renderTable = () => {
+
+}
