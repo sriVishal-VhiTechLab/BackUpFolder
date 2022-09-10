@@ -1,16 +1,28 @@
-function mainFunction() {
+validateUserMail = () => {
+    let mailInp = document.getElementById("usrMail");
+    let isValidEmail = document.getElementById("validMail");
+    let mailRegex = /^[a-zA-Z0-9]+@[a-zA-z]+\.[a-zA-Z]{2,4}$/;
+    if (mailInp.value.match(mailRegex)) {
+        isValidEmail.style.color = "green";
+        isValidEmail.innerHTML = `Mail Is Valid`;
+    }
+    else {
+        isValidEmail.style.color = "red";
+        isValidEmail.innerHTML = `Enter A Valid Email!`
+    }
+}
+mainFunction = () => {
     let usrName = document.getElementById("usrName").value;
-    let usrAge = document.getElementById("usrAge").value;          //REGEX PENDING.
+    let usrAge = document.getElementById("usrAge").value;
     let usrIntrests = document.getElementById("usrInt").value;
     let usrId = document.getElementById("usrId").value;
     let usrDob = document.getElementById("usrDob").value;
     let usrMail = document.getElementById("usrMail").value;
     let usrGender = document.getElementById("usrGender").value;
     let displayObj = dispStudentData(usrName, usrAge, usrIntrests, usrId, usrDob, usrMail, usrGender);
-    document.getElementById("dispModObjDiv").style.display = 'block';
     let result = deleteStudentData(usrName, usrAge, usrIntrests, usrId, usrDob, usrMail, usrGender);
 }
-dispStudentData = (name, age, intrests, id, dob, mail, gender) =>/*Function*/ {
+dispStudentData = (name, age, intrests, id, dob, mail, gender) => {
     let stuData = {};
     stuData.name = name;
     stuData.age = age;

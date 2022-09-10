@@ -2,12 +2,12 @@ mainFunction = () => {
     let usrName = document.getElementById("usrName").value;
     let usrAge = document.getElementById("usrAge").value;
     let usrDob = document.getElementById("usrDob").value;
-    let usrGender = document.getElementById("usrGender").value; debugger;
+    let usrGender = document.getElementById("usrGender").value;
     let usrMail = document.getElementById("usrMail").value;
     let result = getData(usrName, usrAge, usrDob, usrGender, usrMail);
     console.log(result);
 }
-getData=(name, age, dob, gender, mail)=> {
+getData = (name, age, dob, gender, mail) => {
     let student = {};
     student.name = name;
     student.age = age;

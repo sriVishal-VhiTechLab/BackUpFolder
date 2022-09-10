@@ -4,10 +4,10 @@ mainFunction = () => {
     let coinsArray = totalCoinsArray.split(",");
     console.log(coinsArray[0]);
     let result = denominateAmount(totalAmount, coinsArray);
-    document.getElementById("myPara").innerHTML = `The Possible Denominations: [${result}]`
+    document.getElementById("myPara").innerHTML = `The Possible Denominations: ${result}`
 }
 denominateAmount = (amount, coinsArr) => {
-    if (amount === 0) {
+    if (amount == 0) {
         return [];
     }
     else {
@@ -21,3 +21,5 @@ denominateAmount = (amount, coinsArr) => {
         }
     }
 }
+
+// *cleared 

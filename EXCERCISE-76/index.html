@@ -17,6 +17,10 @@
         #dispModObjDiv {
             display: none;
         }
+
+        #validMail {
+            font-size: 15px;
+        }
     </style>
     <h2>Object Modification</h2>
     NAME: <input type="text" name="" id="usrName"><br>
@@ -24,7 +28,8 @@
     Interests: <input type="text" id="usrInt">
     ID: <input type="number" min="0" name="" id="usrId" oninput="validity.valid||(value ='')"><br>
     DOB: <input type="date" name="" id="usrDob" max="2004-01-01"><br>
-    Mail: <input type="text" name="" id="usrMail"><br>
+    Mail: <input type="text" name="" id="usrMail" oninput="validateUserMail()">
+    <span id="validMail"></span><br>
     GENDER:<label for="usrGender"></label>
     <select name="" id="usrGender">
         <option value="">Select</option>

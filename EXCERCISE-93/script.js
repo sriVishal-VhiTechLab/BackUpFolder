@@ -32,3 +32,4 @@ getObject = (Name, age, dob, gender, mail) => {
     return properties;
 
 }
+// !Wrong

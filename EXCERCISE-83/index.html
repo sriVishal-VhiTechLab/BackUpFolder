@@ -10,14 +10,16 @@
 
 <body>
     <style>
-        *{
+        * {
             margin: 10px;
         }
     </style>
     <h2>Even-odd Transformation Of the Array</h2>
-    ENTER YOUR ARRAY : <input type="text" id="usrInp1">ENTER THE NUMBER OF ITERATIONS : <input type="text" id="usrInp2">
-    <button onclick="mainFunction()">Print!</button>
-    <p id="myPara"></p>
+    ENTER YOUR ARRAY : <input type="number" id="usrInpArr">
+    <button id="addEle">Add</button>
+    ENTER THE NUMBER OF ITERATIONS : <input type="number" id="usrInp2" oninput="validity.valid||(value='')">
+    <button onclick=" mainFunction()">Print!</button>
+    <p id="resultPara"></p>
     <script src="script.js"></script>
 </body>
 

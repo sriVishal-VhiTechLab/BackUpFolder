@@ -1,19 +1,32 @@
+let multipler = 2; // ? This Variable is Declared Globally.
+const inpArr = [];
+document.getElementById("addEle").addEventListener('click', () => {
+    let usrVal = Number(document.getElementById("usrInpArr").value);
+    inpArr.push(usrVal);
+});
 mainFunction = () => {
-    let usrArr = document.getElementById("usrInp1").value;
     let usrCount = Number(document.getElementById("usrInp2").value);
-    let splitArray = usrArr.split(' ').map(Number);
-    let additiveNumber = usrCount * 2;
-    let result = arrOperation(splitArray, additiveNumber);
-    console.log(result);
+    let additiveNumber = usrCount * multipler;
+    let result = arrOperation(inpArr, additiveNumber);
+    console.log(inpArr);
+    document.getElementById("resultPara").innerHTML = `${result}`;
 }
 arrOperation = (arr, addNum) => {
-    for (let i = 0; i <= arr.length - 1; i++) {
-        if (arr[i] % 2 == 0) {
-            arr[i] += addNum;
+    const calculate = arr.map(Element => {
+        if (Element % multipler === 0) {
+            Element += addNum;
         }
         else {
-            arr[i] -= addNum;
+            Element -= addNum;
         }
-    }
-    return arr;
+        return Element;
+    })
+    return calculate;
 }
+// *Change the input array methodd get the value one by one and push to array
+// *avoid hardcoding
+// *change the condition in loop
+// *remove for loop 
+
+
+

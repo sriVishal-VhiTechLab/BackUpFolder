@@ -3,12 +3,19 @@ mainFunction = () => {
     let result = checkForChar(usrInp);
     console.log(result);
     if (result === true) {
-        document.getElementById("myPara").innerHTML = `Your Input is Char Datatype`;
+        document.getElementById("showResult").innerHTML = `Your Input is Char Datatype`;
     }
     else {
-        document.getElementById("myPara").innerHTML = `Your Input is Not Char Datatype`;
+        document.getElementById("showResult").innerHTML = `Your Input is Not Char Datatype`;
     }
 }
+let charRegex = /^[a-zA-Z]$/;
 checkForChar = (inp) => {
-    return (/[a-zA-Z]/).test(inp);
+    const validateString = inp.split('').find(Element => {
+        return !charRegex.test(Element);
+
+    })
+    console.log(validateString);
+    // let conversion = validateString.toString();
+    // return conversion;
 }

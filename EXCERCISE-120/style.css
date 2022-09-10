@@ -4,6 +4,10 @@
   box-sizing: border-box;
   scroll-behavior: smooth;
 }
+textarea{
+  resize: none;
+  font-size: 30px;
+}
 .formRowOneContainer {
   height: 400px;
 }
@@ -50,4 +54,7 @@ thead{
 }
 tr>th{
   border: 1px solid black;
+}
+.indication{
+  color: red;
 }

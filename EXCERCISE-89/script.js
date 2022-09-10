@@ -10,3 +10,5 @@ getName = (usr, funct) => {
     let message = funct();
     return `${message} ${usr}`;
 }
+// !Error
+//* pass by Value , // pass by reference.
