@@ -1,15 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
-    <h2>Checking Whether Object has A Specific Property</h2>
-    ENTER YOUR PROPERTY NAME : <input type="text" name="" id="usrInp"><button onclick="mainFunction()">Check!</button>
+    <style>
+        * {
+            margin: 15px;
+        }
+    </style>
+    <h2>Checking For User-Entered Props In Object</h2>
+    NAME : <input type="text" name="" id="usrName"><br>
+    AGE : <input type="text" name="" id="usrAge"><br>
+    DOB: <input type="date" name="" id="usrDob"><br>
+    GENDER : <input type="text" name="" id="usrGender"><br>
+    MAIL : <input type="text" name="" id="usrMail"><br>
+    Check For Property <input type="text" name="" id="usrInp">
+    <button onclick="mainFunction()">Check!</button>
+    <h2 id="myHeader"></h2>
     <p id="myPara"></p>
     <script src="script.js"></script>
 </body>
+
 </html>

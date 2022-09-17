@@ -2,7 +2,9 @@
   margin: 0;
   padding: 0;
 }
-body {
+.mainContainer {
+  height: 100vh;
+  width: 100vw;
   background-image: linear-gradient(
       180deg,
       rgba(12, 16, 49, 0.6),
@@ -11,51 +13,78 @@ body {
     url(./Assets/UNO-BACKGROUND.jpg);
   background-repeat: no-repeat;
   background-size: 100% 100%;
-}
-.mainContainer {
-  height: 100vh;
-  width: 100vw;
-}
-.machineDeck,
-.PlayerDeck {
-  width: 90%;
-  height: 250px;
-  /* background-color: #333; */
-  margin: 10px;
-}
-.machineDeck > div,
-.PlayerDeck > div {
-  width: 10%;
-  border: 1px solid white;
-  height: 225px;
-  background-color: black;
   display: flex;
+  flex-direction: column;
+  justify-content: space-around;
   align-items: center;
 }
-.machineDeck > div > div,
-.PlayerDeck > div > div,
-.deckBox > div > div {
-  background-image: url(././pngaaa.com-928581.png);
-  background-repeat: no-repeat;
-  background-size: 95% 100%;
-  height: 60%;
+.computerDeck {
+  height: 170px;
+  width: 80%;
+  display: flex;
+  justify-content: space-around;
+  /* background-color: black; */
+}
+.playerDeck {
+  height: 230px;
+  width: 80%;
+  display: flex;
+  justify-content: space-around;
+}
+.shuffleButton {
+  height: 100px;
+  width: 100px;
+}
+.shuffleButton > button {
+  border-radius: 40px;
+  background-color: lightseagreen;
+  color: black;
+  height: 100%;
   width: 100%;
-  background-image: url(././pngaaa.com-928581.png);
-  background-repeat: no-repeat;
-  background-size: 95% 100%;
-  height: 60%;
+  font-size: 15px;
+  letter-spacing: 2px;
 }
-.shuffleCards {
-  width: 25%;
-  height: 250px;
-  /* background-color: #fff; */
-  margin: 10px;
-}
-.deckBox > div {
-  height: 225px;
-  width: 36%;
-  background-color: black;
-  border: 1px solid white;
+.computerDeck > div,
+.playerDeck > div {
+  text-align: center;
   display: flex;
+  flex-direction: column;
   align-items: center;
+  justify-content: center;
+  border-radius: 9px;
+  width: 95px;
+  height: 150px;
+  float: left;
+  padding: 3px 3px 3px 3px;
+  margin: 5px;
+}
+.value {
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: black;
+  background-color: #fff;
+}
+.Red {
+  background-color: red;
+  color: red;
+  border: 2px solid black;
+}
+.Yellow {
+  background-color: yellow;
+  color: yellow;
+  border: 2px solid red;
+}
+.Green {
+  background-color: green;
+  color: green;
+  border: 2px solid yellow;
+}
+.Blue {
+  background-color: blue;
+  color: blue;
+  border: 2px solid yellow;
 }

@@ -10,6 +10,5 @@ highestCommonFactor = (num1, num2) => {
                   res = i;
             }
       }
-      
       document.getElementById("myPara").innerHTML = `The HCF Value is : ${res}`;
 }

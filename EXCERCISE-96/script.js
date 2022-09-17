@@ -3,7 +3,7 @@ mainFunction = () => {
     let result = validateRegex(usrInp);
 }
 validateRegex =(str)=>{
-    if (str.startsWith("/")&& str.endsWith("/")){
+    if (str.startsWith("/^")&& str.endsWith("$/")){
         document.getElementById("myPara").innerHTML = `The Given Input Is an Regex Expression`;
     }
     else{

@@ -15,13 +15,12 @@
 .updateModal::backdrop,
 #emptyModal::backdrop,
 #resetModal::backdrop,
-#delModal::backdrop 
-{
+#delModal::backdrop {
   background-color: #b3cdd1;
   background-image: linear-gradient(315deg, #b3cdd1 0%, #9fa4c4 74%);
   opacity: 0.4;
 }
-textarea{
+textarea {
   resize: none;
   font-size: 30px;
 }
@@ -59,19 +58,19 @@ textarea{
   height: 40px;
   text-align: center;
 }
-.btnContainer{
-      width: 95%;
+.btnContainer {
+  width: 95%;
 }
-.crudTableHead{
-      width: 100%;
+.crudTableHead {
+  width: 100%;
 }
-thead{
+thead {
   text-align: center;
   height: 50px;
 }
-tr>th{
+tr > th {
   border: 1px solid black;
 }
-.indication{
+.indication {
   color: red;
 }

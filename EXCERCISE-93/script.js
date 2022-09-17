@@ -33,3 +33,4 @@ getObject = (Name, age, dob, gender, mail) => {
 
 }
 // !Wrong
+// ? dono Hw to Proceed.
