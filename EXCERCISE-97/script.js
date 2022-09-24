@@ -1,3 +1,5 @@
+const CHAR_REGEX = /^[a-zA-Z]$/;
+
 mainFunction = () => {
     let usrInp = document.getElementById("usrInp").value;
     let result = checkForChar(usrInp);
@@ -9,7 +11,7 @@ mainFunction = () => {
         document.getElementById("showResult").innerHTML = `Your Input is Not Char Datatype`;
     }
 }
-let charRegex = /^[a-zA-Z]$/;
+
 checkForChar = (inp) => {
     const validateString = inp.split('').find(Element => {
         return !charRegex.test(Element);

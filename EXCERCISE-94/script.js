@@ -7,3 +7,5 @@ function validateObject(text) {
     let datatype = typeof(text);
     return datatype === 'object';
 }
+// ! Check For Array 
+// ? alernative for typeOf()

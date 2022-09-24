@@ -5,14 +5,7 @@
 .mainContainer {
   height: 100vh;
   width: 100vw;
-  background-image: linear-gradient(
-      180deg,
-      rgba(12, 16, 49, 0.6),
-      rgba(20, 19, 21, 0.8)
-    ),
-    url(./Assets/UNO-BACKGROUND.jpg);
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
+  background-color: rgb(55, 173, 55);
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -22,14 +15,15 @@
   height: 170px;
   width: 80%;
   display: flex;
-  justify-content: space-around;
-  /* background-color: black; */
+  justify-content: center;
+  gap: 5px;
 }
 .playerDeck {
   height: 230px;
   width: 80%;
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
+  gap: 5px;
 }
 .shuffleButton {
   height: 100px;
@@ -87,4 +81,25 @@
   background-color: blue;
   color: blue;
   border: 2px solid yellow;
+}
+.computerDeck > div{
+  background-color: #000 !important;
+  border: 2px solid #fff !important;
+  
+}
+.computerDeck > div>div{
+  display: none;
+}
+.shuffleBox{
+  height: 30%;
+  width: 300px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.shuffleBox>div{
+  height: 65%;
+  width: 110px;
+  background-color: yellow;
+  border: 2px solid sienna;
 }
