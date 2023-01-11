@@ -1,32 +1,23 @@
-mainFunction = () => {
-      let usrArr = document.getElementById("usrArr").value;
-      let arrOfNum = usrArr.split(" ").map(Number);
-      let result = mergeSort(arrOfNum);
-      console.log(result);
-      debugger;
-}
-mergeSort = (array) => {
-      if (array.length === 1) {
-            return array;// Base Condition.
+const mergeSortArray = (arr) => {
+      if (arr.length < 2) {
+            return arr // * base Cond.
       }
-      let midIndex = Math.floor(array.length / 2);
-      let leftPart = array.slice(0, midIndex);
-      let rightPart = array.slice(midIndex); // Returns the array of elements After MidIndex.
-      return mergeArray(mergeSort(leftPart), mergeSort(rightPart));
+      const midEle = Math.floor(arr.length / 2);
+      const leftArray = arr.slice(0, midEle);
+      const rightArray = arr.slice(midEle);
+      return merge(mergeSortArray(leftArray), mergeSortArray(rightArray));
 }
-mergeArray = (left, right) => {
-      debugger;
-      let outArray = [];// Final Output Array.
-      let leftArrayIndex = 0, rightArrayIndex = 0;
-      while (leftArrayIndex < left.length && rightArrayIndex < right.length) {
-            if (left[leftArrayIndex] < right[rightArrayIndex]) {
-                  outArray.push(left[leftArrayIndex]);
-                  leftArrayIndex++;
-            }
-            else {
-                  outArray.push(right[rightArrayIndex]);
-                  rightArrayIndex++;
+const merge = (leftArray, rightArray) => {
+      const sortArray = [];
+      while (leftArray.length && rightArray.length) {
+            if (leftArray[0] <= rightArray[0]) {
+                  sortArray.push(leftArray.shift());
+            } else {
+                  sortArray.push(rightArray.shift())
+                  // * Shift Method is used to remove the element from the rightArray 
+                  // * After Pushing the same Into sortArray.  
             }
       }
-      return outArray.concat(left.slice(leftArrayIndex)).concat(right.slice(rightArrayIndex));
+      return [...sortArray, ...leftArray, ...rightArray];
 }
+console.log(mergeSortArray([12, 34, 11, 8, 6, 10, 23, 46]));

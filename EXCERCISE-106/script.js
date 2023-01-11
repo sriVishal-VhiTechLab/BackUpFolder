@@ -1,16 +1,23 @@
-mainFunction = () => {
-      let usrArr = document.getElementById("usrArr").value;
-      let splitArray = usrArr.split(" ");
-      let result = extractUnique(splitArray);
-      document.getElementById("myPara").innerHTML = result;
-}
+// fn -1
 extractUnique = (arr) => {
-      debugger
       let uniqueArray = [];
-      for (let i = 0; i < arr.length; i++) {
-            if (uniqueArray.includes(arr[i]) === false) {
-                  uniqueArray.push(arr[i]);
-            }
-      }
-      return uniqueArray;
+      // for (let i = 0; i < arr.length; i++) {
+      //       if (!uniqueArray.includes(arr[i])) {
+      //             uniqueArray.push(arr[i]);
+      //       }
+      // }
+      // return uniqueArray;
+
+}
+// ! REDUCE 
+// fn-2
+extractUniq = (arr) => {
+      console.log(new Set(arr));
+}
+uniqueChar = (arr) => {
+      return [...arr].reduce(
+            (acc, current) => {
+                  return acc.includes(current) ? acc : acc + current;
+            }, ""
+      )
 }

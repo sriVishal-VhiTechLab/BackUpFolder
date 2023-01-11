@@ -9,3 +9,6 @@ sumOfArray = (Array) => {
       Array.map(x => { temp += Number(x); });
       return temp;
 }
+
+
+// use reduce

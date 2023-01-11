@@ -5,7 +5,8 @@ mainFunction = () => {
 }
 highestCommonFactor = (num1, num2) => {
       let res;
-      for (let i = 1; i <= num1 && i <= num2; i++) {
+       for (let i = 1; i <= num1 && i <= num2; i++) { 
+            // @ finding the greatest number which divides both
             if (num1 % i == 0 && num2 % i == 0) {
                   res = i;
             }

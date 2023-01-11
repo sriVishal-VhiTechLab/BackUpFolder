@@ -6,7 +6,6 @@ mainFunction = () => {
       let resArray = arrayChunk(numArray, chunkValue);
 }
 arrayChunk = (arr, chunkVal) => {
-      debugger;
       let tempArray = [];
 
       for (let i = 0; i < arr.length; i += chunkVal) {

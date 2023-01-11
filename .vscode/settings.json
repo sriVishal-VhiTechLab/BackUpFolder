@@ -1,5 +1,5 @@
 {
-  "workbench.colorTheme": "Ayu Dark Bordered",
+  "workbench.colorTheme": "dragan",
   "git.ignoreMissingGitWarning": true,
   "liveServer.settings.donotShowInfoMsg": true,
   "[javascript]": {
@@ -16,7 +16,7 @@
   "[css]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-  "workbench.iconTheme": "material-icon-theme",
+  "workbench.iconTheme": "ayu",
   "editor.cursorBlinking": "smooth",
   "editor.cursorSmoothCaretAnimation": true,
   "editor.formatOnPaste": true,

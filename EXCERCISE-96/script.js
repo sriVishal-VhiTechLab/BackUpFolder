@@ -1,15 +1,4 @@
-mainFunction = () => {
-    let usrInp = document.getElementById("usrInp").value;
-    let result = validateRegex(usrInp);
+function validate_regexp(value) {
+    return toString.call(value) === '[object RegExp]';
 }
-validateRegex =(str)=>{
-    if (str.startsWith("/^")&& str.endsWith("$/")){
-        document.getElementById("myPara").innerHTML = `The Given Input Is an Regex Expression`;
-    }
-    else{
-        document.getElementById("myPara").innerHTML = `The Given Input Is Not an Regex Expression`;
-        
-    }
-}
-
-//wrong change it
+// * Changes Done 

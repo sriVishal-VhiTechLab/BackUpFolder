@@ -1,103 +1,56 @@
-class Graph {
-      constructor() {
-            this.vertices = [];
-            this.adjacencyList = {};
-      }
-
-      addVertex(vertex) {
-            this.vertices.push(vertex);
-            this.adjacencyList[vertex] = {};
-      }
-
-      addEdge(vertex1, vertex2, weight) {
-            this.adjacencyList[vertex1][vertex2] = weight;
-      }
-
-      changeWeight(vertex1, vertex2, weight) {
-            this.adjacencyList[vertex1][vertex2] = weight;
-      }
-
-      dijkstra(source) {
-            let distances = {},
-                  parents = {},
-                  visited = new Set();
-            for (let i = 0; i < this.vertices.length; i++) {
-                  if (this.vertices[i] === source) {
-                        distances[source] = 0;
-                  } else {
-                        distances[this.vertices[i]] = Infinity;
-                  }
-                  parents[this.vertices[i]] = null;
-            }
-
-            let currVertex = this.vertexWithMinDistance(distances, visited);
-
-            while (currVertex !== null) {
-                  let distance = distances[currVertex],
-                        neighbors = this.adjacencyList[currVertex];
-                  for (let neighbor in neighbors) {
-                        let newDistance = distance + neighbors[neighbor];
-                        if (distances[neighbor] > newDistance) {
-                              distances[neighbor] = newDistance;
-                              parents[neighbor] = currVertex;
+const graph = {
+      a: { b: 5, c: 2 },
+      b: { a: 5, c: 7, d: 8 },
+      c: { a: 2, b: 7, d: 4, e: 8 },
+      d: { b: 8, c: 4, e: 6, f: 4 },
+      e: { c: 8, d: 6, f: 3 },
+      f: { e: 3, d: 4 },
+};
+const formatGraph = (g) => {
+      const tempObj = {};
+      Object.keys(g).forEach(k => {
+            const Innerobj = g[k];
+            const arr = [];
+            Object.keys(Innerobj).forEach(v => {
+                  arr.push(
+                        {
+                              vertex: v,
+                              cost: Innerobj[v]
                         }
-                  }
-                  visited.add(currVertex);
-                  currVertex = this.vertexWithMinDistance(distances, visited);
-            }
+                  );
+            });
+            tempObj[k] = arr;
+      });
 
-            console.log(parents);
-            console.log(distances);
-      }
-
-      vertexWithMinDistance(distances, visited) {
-            let minDistance = Infinity,
-                  minVertex = null;
-            for (let vertex in distances) {
-                  let distance = distances[vertex];
-                  if (distance < minDistance && !visited.has(vertex)) {
-                        minDistance = distance;
-                        minVertex = vertex;
-                  }
-            }
-            return minVertex;
-      }
+      return tempObj;
 }
-// let g = new Graph();
-// g.addVertex("0");
-// g.addVertex("1");
-// g.addVertex("7");
-// g.addVertex("2");
-// g.addVertex("8");
-// g.addVertex("6");
-// g.addVertex("3");
-// g.addVertex("5");
-// g.addVertex("4");
-// g.addEdge("0", "1", 4);
-// g.addEdge("0", "7", 8);
-// g.addEdge("1", "7", 11);
-// g.addEdge("1", "2", 8);
-// g.addEdge("7", "8", 7);
-// g.addEdge("7", "6", 1);
-// g.addEdge("7", "8", 7);
-// g.addEdge("2", "8", 2);
-// g.addEdge("2", "5", 4);
-// g.addEdge("2", "3", 7);
-// g.addEdge("3", "9", 4);
-// g.addEdge("3", "5", 14);
-// g.addEdge("4", "9", 3);
-// g.addEdge("4", "10", 5);
+const dijikstra = (graph, start, end) => {
+      const map = formatGraph(graph);
+      let visited = [];
+      let unVisited = [start];
+      let shortestDistances = {
+            [start]: {
+                  vertex: [start],
+                  cost: 0
+            }
+      };
+      let vertex;
+      while (vertex = unVisited.shift()) {
+            let neighBourNodes = map[vertex].filter((nodes) => !visited.includes(nodes.vertex));
+            unVisited.push(...neighBourNodes.map((n) => n.vertex));
+            let costToNodes = shortestDistances[vertex].cost;
+            for (const { vertex: to, cost } of neighBourNodes) {
+                  let currCostToNeighbours = shortestDistances[to] && shortestDistances[to].cost;
+                  let newNeighBourCost = costToNodes + cost;
+                  if (currCostToNeighbours == undefined || newNeighBourCost < currCostToNeighbours) {
+                        shortestDistances[to] = { vertex, cost: newNeighBourCost };
+                  }
 
-// g.dijkstra("0");
-let g = new Graph();
-g.addVertex("start");
-g.addVertex("A");
-g.addVertex("B");
-g.addVertex("finish");
+            }
+            visited.push(vertex);
+      }
+console.log(shortestDistances);
+}
+dijikstra(graph, "a", "f");
 
-g.addEdge("start", "A", 6);
-g.addEdge("start", "B", 2);
-g.addEdge("A", "finish", 1);
-g.addEdge("B", "A", 3);
-g.addEdge("B", "finish", 5)
-g.dijkstra("start");
+

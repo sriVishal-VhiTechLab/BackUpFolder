@@ -1,11 +1,4 @@
-// function mainFunction() {
-//     let usrInp = document.getElementById("usrInp").value;
-//     let result = validateObject(usrInp);
-//     console.log(result);
-// }
 function validateObject(text) {
-    let datatype = typeof(text);
-    return datatype === 'object';
+    return text && typeof text === 'object' && text.constructor === Object;
 }
-// ! Check For Array 
-// ? alernative for typeOf()
+// * Changes Done
